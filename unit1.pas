@@ -5,10 +5,25 @@ unit Unit1;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs;
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls;
 
 type
+
+  { TForm1 }
+
   TForm1 = class(TForm)
+    Button1: TButton;
+    Button2: TButton;
+    Edit1: TEdit;
+    Edit2: TEdit;
+    Edit3: TEdit;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Memo1: TMemo;
+    procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+    procedure Edit1Change(Sender: TObject);
   private
 
   public
@@ -21,6 +36,29 @@ var
 implementation
 
 {$R *.lfm}
+
+{ TForm1 }
+
+procedure TForm1.Edit1Change(Sender: TObject);
+begin
+
+end;
+
+procedure TForm1.Button1Click(Sender: TObject);
+var a,b:real;
+c:string;
+begin
+a:=StrtoFloat(edit1.Text);
+b:=StrtoFloat(edit2.Text);
+c:=FloattoStr(a/b*16.67);
+
+edit3.Text:=c;
+end;
+
+procedure TForm1.Button2Click(Sender: TObject);
+begin
+   if Memo1.Visible then Memo1.Visible:=false else Memo1.Visible:=true;
+end;
 
 end.
 
